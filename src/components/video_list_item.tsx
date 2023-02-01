@@ -1,6 +1,11 @@
-import React from "react";
+import { Video } from '../types/types';
 
-const VideoListItem = ({ video, onVideoSelect }) => {
+type Props = {
+  video: Video
+  onVideoSelect: (video: Video) => void
+}
+
+export const VideoListItem = ({ video, onVideoSelect }: Props) => {
   const imageUrl = video.snippet.thumbnails.default.url;
 
   return (
@@ -16,5 +21,3 @@ const VideoListItem = ({ video, onVideoSelect }) => {
     </li>
   );
 };
-
-export default VideoListItem;
